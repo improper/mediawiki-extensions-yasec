@@ -45,7 +45,8 @@ $wgResourceModules['ext.yasec'] = array(
     'scripts' => array(
         'fullcalendar/lib/moment.min.js',
         'fullcalendar/fullcalendar/fullcalendar.min.js',
-        'ext.yasec.core.js',
+        'fullcalendar/fullcalendar/lang/all.js',
+		'ext.yasec.core.js',
     ),
     'styles' => array(
         'fullcalendar/fullcalendar/fullcalendar.css',
@@ -109,6 +110,7 @@ function renderEventCalendar( $input, $args, $mwParser ) {
     // defaults
     $aspectRatio = 1.6;
     $namespaceIndex = 0;
+    $lang = 'en';
 
     $parameters = explode( "\n", $input );
 
@@ -122,6 +124,9 @@ function renderEventCalendar( $input, $args, $mwParser ) {
         switch ( $type ) {
             case 'aspectratio':
                 $aspectRatio = floatval( $arg );
+                break;
+            case 'lang':
+                $lang = $arg;
                 break;
             case 'namespace':
                 $ns = $wgContLang->getNsIndex( $arg );
@@ -215,6 +220,8 @@ function renderEventCalendar( $input, $args, $mwParser ) {
         "<script>\n" .
         "if ( typeof window.eventCalendarAspectRatio !== 'object' ) { window.eventCalendarAspectRatio = []; }\n" .
         "window.eventCalendarAspectRatio.push( {$aspectRatio} );\n" .
+        "if ( typeof window.eventCalendarLang !== 'object' ) { window.eventCalendarLang = []; }\n" .
+        "window.eventCalendarLang.push( '{$lang}' );\n" .
         "if ( typeof window.eventCalendarData !== 'object' ) { window.eventCalendarData = []; }\n" .
         "window.eventCalendarData.push( " . json_encode( $events ) . " );\n" .
         "</script>\n";

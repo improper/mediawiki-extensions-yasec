@@ -33,10 +33,14 @@ Typical invocation on a page:
     <EventCalendar>
     namespace = Event
     aspectratio = 1.35
+    lang = en
     </EventCalendar>
 
 `aspectratio` is optional and defaults to 1.6. CSS `max-width` is set to
 800px and can be overridden in `MediaWiki:Common.css`.
+
+`lang` is optional and defaults to en. Other languages code options can
+be found in /resources/fullcalendar/fullcalendar/lang directory
 
 ### Requirements
 

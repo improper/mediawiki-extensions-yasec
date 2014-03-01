@@ -4,7 +4,8 @@ jQuery( document ).ready( function( $ ) {
             // render calendar
             $( "#eventcalendar-" + ( i + 1 )).fullCalendar({
                 aspectRatio: window.eventCalendarAspectRatio[i],
-                events: window.eventCalendarData[i]
+                events: window.eventCalendarData[i],
+                lang: window.eventCalendarLang[i]
             });
 
             // FIXME sometimes init is called too early, it seems, so rerender to be sure
