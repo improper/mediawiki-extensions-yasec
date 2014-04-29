@@ -74,7 +74,8 @@ Typical invocation on a page:
       # Set to false to use the normal amount of page caching (most efficient),
       # set to 0 to disable cache altogether (inefficient, but results will never
       # be outdated)
-      $wgECMaxCacheTime = 60*60*24;   // How long to cache pages in seconds
+      # $wgECMaxCacheTime = 60*60*24;   // How long to cache pages in seconds
+      $wgECMaxCacheTime = 0;   // How long to cache pages in seconds
       ```
 
   [1]: http://www.mediawiki.org/wiki/Extension:DynamicPageList_(Wikimedia)
