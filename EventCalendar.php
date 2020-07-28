@@ -133,7 +133,7 @@ function renderEventCalendar( $input, $args, $mwParser ) {
     } // end foreach()
 
     // build the SQL query
-    $dbr = wfGetDB( DB_SLAVE );
+    $dbr = wfGetDB( DB_REPLICA );
     $tables = array( 'page' );
     $fields = array( 'page_title' );
     $where = array();

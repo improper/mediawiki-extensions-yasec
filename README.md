@@ -41,7 +41,7 @@ Typical invocation on a page:
 ### Requirements
 
 * MediaWiki 1.22 (will probably work with other versions, comments
-  appreciated)
+  appreciated) tested with MW 1.34.2
 * MySQL (see [#1][4])
 
 ### Installation
